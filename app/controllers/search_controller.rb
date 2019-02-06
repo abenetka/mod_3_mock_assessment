@@ -13,11 +13,15 @@ class SearchController < ApplicationController
   # end
 
   def index
-    @fuel_stations
+    @conn = Faraday.new(url: "https://developer.nrel.gov/api") do |faraday|
+      faraday.headers["X-API-KEY"] = ENV["X-API-KEY"]
+      faraday.adapter Faraday.default_adapter
+    end
 
-    conn = Faraday.new(url: "https://developer.nrel.gov/api/alt-fuel-stations/v1") do |faraday|
-      faraday.headers[]
+    response = @conn.get("/alt-fuel-stations/v1")
+    @fuel_stations = JSON.parse(response.body, symbolize_names:true)
   end
+
 
 
 
