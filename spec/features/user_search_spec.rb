@@ -7,10 +7,12 @@ describe "As a User" do
     visit "/"
 
     fill_in :q, with: 80203
-    save_and_open_page
-    click_link "Locate"
+
+    click_button "Locate"
 
     expect(current_path).to eq(search_path)
+
+
 
 
 
