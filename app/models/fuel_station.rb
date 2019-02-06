@@ -1,5 +1,6 @@
 class FuelStation
   def initialize(attributes)
+    binding.pry
     @name = attributes[:station_name]
     @address = attributes[:address]
     @fuel_types = attributes[:fuel_types]

@@ -1,7 +1,9 @@
 class SearchController < ApplicationController
 
   def index
-    @fuel_stations = FuelSearchResult.new(zip)
+    zip = params[:q]
+    binding.pry
+    @search = FuelSearchResult.new(zip)
   end
 
 

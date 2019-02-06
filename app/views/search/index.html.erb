@@ -1,9 +1,10 @@
-<ul>
-  <% @fuel_stations.each do |station| %>
-    <li><%= station.name %></li>
-    <li><%= station.address %></li>
-    <li><%= station.fuel_types %></li>
-    <li><%= station.distance %></li>
-    <li><%= station.access_times %></li>
+  <% @search.fuel_stations.each do |station| %>
+  <ul class="fuel_stations">
+  <% binding.pry %>
+    <li class="name"><%= station.name %></li>
+    <li class="address"><%= station.address %></li>
+    <li class="fuel_types"><%= station.fuel_types %></li>
+    <li class="distance"><%= station.distance %></li>
+    <li class="access_times"><%= station.access_times %></li>
   <% end %>
 </ul>
