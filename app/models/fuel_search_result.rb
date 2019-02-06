@@ -4,7 +4,7 @@ class FuelSearchResult
   end
 
   def fuel_stations
-    data = AltFuelService.new(@zip).fuel_stations_by_zipcode
+    data = AltFuelService.new(@zip).fuel_stations_by_zipcode.[8][1][0]
     binding.pry
     data.map do |raw_station|
       FuelStation.new(raw_station)
