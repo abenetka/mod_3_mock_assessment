@@ -4,7 +4,7 @@ class AltFuelService
   end
 
   def fuel_stations_by_zipcode
-    get_json("/api/alt-fuel-stations/v1.json?location=#{@zip}&radius=6&fuel_type=ELEC, LPG"
+    get_json("/api/alt-fuel-stations/v1/nearest?location=#{@zip}&radius=6&fuel_type=ELEC, LPG")
   end
 
   def get_json(url)
